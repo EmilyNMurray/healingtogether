@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function AboutLovedOne() {
     const navigate = useNavigate();
 
+    //formData is the object that holds the info from the form
     const [formData, setFormData] = useState({
         condition: '',
         traumaDate: '',
@@ -15,11 +16,13 @@ function AboutLovedOne() {
         additionalInfo: '',
     });
 
+    //handle one input (txt input and single option)
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
+    //need one for multiple select too
     const handleMultiSelectChange = (e) => {
         const { name, options } = e.target;
         const values = Array.from(options).filter(option => option.selected).map(option => option.value);
@@ -28,7 +31,7 @@ function AboutLovedOne() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/dashboard');
+        navigate('/guided-tour');
     };
 
     return (
@@ -49,19 +52,6 @@ function AboutLovedOne() {
                 <div className="form-group">
                     <label htmlFor="traumaDate">When did the accident or trauma occur?</label>
                     <input type="date" id="traumaDate" name="traumaDate" onChange={handleChange} required />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="relationship">What is your relationship to the individual?</label>
-                    <select id="relationship" name="relationship" onChange={handleChange} required>
-                        <option value="">Select</option>
-                        <option value="parent">Parent</option>
-                        <option value="spouse">Spouse/Partner</option>
-                        <option value="sibling">Sibling</option>
-                        <option value="friend">Friend</option>
-                        <option value="caregiver">Caregiver</option>
-                        <option value="other">Other</option>
-                    </select>
                 </div>
 
                 <div className="form-group">

@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
-    const navigate = useNavigate(); // React Router hook for navigation
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent page refresh
-        navigate('/about-loved-one'); // Redirect to the "About Loved One" page
+        e.preventDefault(); //prevent page refresh
+        navigate('/onboarding'); 
     };
 
     return (

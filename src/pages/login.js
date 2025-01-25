@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const navigate = useNavigate(); // React Router hook for navigation
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent form submission from refreshing the page
-        console.log('Redirecting to dashboard...'); // Debugging log
-        navigate('/dashboard'); // Redirect to the Dashboard page
+        e.preventDefault(); //prevent form submission from refreshing the page
+        console.log('Redirecting to dashboard...'); 
+        navigate('/dashboard'); 
     };
 
     return (

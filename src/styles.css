@@ -157,9 +157,9 @@ body, html {
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh; /* Full-screen height */
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
-    width: 90%; /* Use most of the screen width */
+    width: 100%; /* Use most of the screen width */
     margin: 0 auto;
 }
 
@@ -168,7 +168,7 @@ body, html {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Ensure exactly 3 columns in a row */
     gap: 2rem; /* Add spacing between cards */
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 100%; /* Stretch to full width */
     max-width: 800px; /* Constrain to align with progress bar width */
     margin-left: auto;
@@ -185,6 +185,16 @@ body, html {
     color: #333;
 }
 
+.card p a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card p a:hover {
+    color: #1f618d;
+}
+
 .mental-health {
     border-left: 5px solid lavender;
 }
@@ -195,6 +205,24 @@ body, html {
 
 .resources {
     border-left: 5px solid #3498db;
+}
+
+/* Button-style link */
+.link-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    background-color: #1f618d;
 }
 
 /* Progress Section */
@@ -240,6 +268,369 @@ body, html {
 .motivational-quote {
     font-size: 2rem; /* Increase font size */
     color: #555;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     font-style: italic;
+}
+
+/* Task List */
+.task-list {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.task-list h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.task-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #555;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.task-list li.task-completed {
+    background-color: #3498db; /* Blue background for completed tasks */
+    color: #fff; /* White text for better contrast */
+    border-radius: 5px; /* Rounded corners */
+    padding: 0.5rem;
+}
+
+.task-list li label {
+    cursor: pointer;
+    width: 100%;
+}
+
+.task-list li input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.2); /* Make the checkbox slightly larger */
+}
+
+/* Caregiver Support Page */
+
+/* General Page Layout */
+.caregiver-support {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Tips Section */
+.tips-section {
+    margin-bottom: 2rem;
+}
+
+.tips-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    flex: 1 1 calc(30% - 1rem); /* Flexible for responsiveness */
+    text-align: left;
+}
+
+.audio-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.audio-button:hover {
+    background-color: #1f618d;
+}
+
+/* Community Section */
+.community-section {
+    margin-top: 3rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tabs button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    color: #555;
+    font-weight: bold;
+}
+
+.tabs button.active-tab {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.tab-content {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Full Care Plan Page */
+.full-care-plan {
+    padding: 2rem;
+    text-align: center;
+}
+
+.info-section {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Task Section */
+.task-section {
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.task-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Recovery Task List */
+.task-list {
+    list-style-type: none;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.task-list li.task-completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list li label {
+    cursor: pointer;
+}
+
+.task-list li input[type="checkbox"] {
+    margin-right: 1rem;
+    transform: scale(1.2);
+    cursor: not-allowed;
+}
+
+.task-completed {
+    text-decoration: line-through;
+    color: white;
+    background-color: #3498db;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.video-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.video-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.video-container {
+    margin: 0 auto;
+    max-width: 560px; /* Match the width of the video */
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*onboarding page*/
+/* Onboarding Page */
+.onboarding-container {
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.onboarding-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.onboarding-container p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.onboarding-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.onboarding-step {
+    background-color: #ffffff; /* Add white background for individual steps */
+    border-radius: 10px; /* Rounded corners for each box */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 1rem; /* Inner padding for content */
+    text-align: left; /* Align text inside the box */
+}
+
+.onboarding-step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #3498db;
+}
+
+.onboarding-step p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.resources-directory {
+    padding: 2rem;
+    text-align: center;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    background-color: #1f618d;
+}
+
+.directory-content {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.map-container {
+    flex: 1 1 60%;
+    margin-bottom: 2rem;
+}
+
+.map-container iframe {
+    height: 550px; /* Increase the height */
+    width: 100%; /* Keep the width responsive */
+    border: none;
+    border-radius: 10px; /* Optional for rounded edges */
+}
+
+.professionals-list {
+    flex: 1 1 30%;
+    text-align: left;
+}
+
+.professional-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.professional-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.professional-card p {
+    margin: 0 0 1rem 0;
+    color: #777;
+}
+
+.contact-icons a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.contact-icons a:hover {
+    color: #1f618d;
+}
+
+.contact-icons i {
+    margin-right: 0.5rem;
 }

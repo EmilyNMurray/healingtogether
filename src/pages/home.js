@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-    const navigate = useNavigate(); // React Router hook for navigation
+    const navigate = useNavigate(); 
 
     return (
         <div className="container">
@@ -12,7 +12,7 @@ function Home() {
                 alt="Healing Together Logo"
                 className="home-logo"
             />
-            <div className="tagline">Support Made Simple. Recovery Together.</div>
+            <div className="tagline">Support Made Simple. Recover  Together.</div>
             <div className="buttons-container">
                 <button className="button" onClick={() => navigate('/signup')}>
                     Sign Up
