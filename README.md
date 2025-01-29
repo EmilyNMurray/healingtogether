@@ -1,3 +1,5 @@
+# PLEASE NOTE THAT I HAVE NOT YET CREATED A README FILE TO EXPLAIN THE DOWNLOAD AND RUN PROCESS. THIS IS COMING SOON.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
