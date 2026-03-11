@@ -150,7 +150,7 @@ A test account has been pre-created for demo and development purposes:
 |---|---|
 | **Name** | John Doe |
 | **Email** | test@uvic.ca |
-| **Password** | HT |
+| **Password** | Healing |
 
 > Note: This account is stored locally in `server/users.json` and is only available on the machine where it was created.
 
