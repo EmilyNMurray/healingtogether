@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter, Navigate } from 'react-router-dom';
 import Home from './pages/home';
 import Login from './pages/login';
 import SignUp from './pages/signup';
+import About from './pages/about';
 import AboutLovedOne from './pages/aboutLovedOne';
 import Navigation from './navbar';
 import Dashboard from './pages/dashboard';
 import FullCarePlan from './pages/fullCarePlan';
 import MentalHealth from './pages/mentalHealth';
-import Onboarding from './pages/onboarding'; 
-import GuidedTourPlaceholder from './pages/guidedTourPlaceholder'; 
+import Onboarding from './pages/onboarding';
+import GuidedTourPlaceholder from './pages/guidedTourPlaceholder';
 import TrackingMilestones from './pages/trackingMilestones';
 import ResourcesDirectory from './pages/resourcesDirectory';
+
+function ProtectedRoute({ element }) {
+    const token = localStorage.getItem('token');
+    return token ? element : <Navigate to="/login" replace />;
+}
 
 
 function App() {
@@ -43,36 +49,44 @@ function App() {
         <HashRouter>
             <Navigation />
             <Routes>
+                {/* Public routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
-                <Route path="/about-loved-one" element={<AboutLovedOne />} />
-                <Route path="/onboarding" element={<Onboarding />} /> 
-                <Route path="/guided-tour" element={<GuidedTourPlaceholder />} />
-                <Route path="/tracking-milestones" element={<TrackingMilestones />} />
+                <Route path="/about" element={<About />} />
+
+                {/* Protected routes — must be logged in */}
+                <Route path="/about-loved-one" element={<ProtectedRoute element={<AboutLovedOne />} />} />
+                <Route path="/onboarding" element={<ProtectedRoute element={<Onboarding />} />} />
+                <Route path="/guided-tour" element={<ProtectedRoute element={<GuidedTourPlaceholder />} />} />
+                <Route path="/tracking-milestones" element={<ProtectedRoute element={<TrackingMilestones />} />} />
                 <Route
                     path="/dashboard"
                     element={
-                        <Dashboard
-                            tasks={tasks}
-                            completedTasks={completedTasks}
-                            toggleTaskCompletion={toggleTaskCompletion}
-                        />
+                        <ProtectedRoute element={
+                            <Dashboard
+                                tasks={tasks}
+                                completedTasks={completedTasks}
+                                toggleTaskCompletion={toggleTaskCompletion}
+                            />
+                        } />
                     }
                 />
                 <Route
                     path="/full-care-plan"
                     element={
-                        <FullCarePlan
-                            tasks={tasks}
-                            completedTasks={completedTasks}
-                            toggleTaskCompletion={toggleTaskCompletion}
-                        />
+                        <ProtectedRoute element={
+                            <FullCarePlan
+                                tasks={tasks}
+                                completedTasks={completedTasks}
+                                toggleTaskCompletion={toggleTaskCompletion}
+                            />
+                        } />
                     }
                 />
-                <Route path="/mental-health" element={<MentalHealth />} /> 
-                <Route path="/resources" element={<ResourcesDirectory />} />
+                <Route path="/mental-health" element={<ProtectedRoute element={<MentalHealth />} />} />
+                <Route path="/resources" element={<ProtectedRoute element={<ResourcesDirectory />} />} />
             </Routes>
         </HashRouter>
     );
